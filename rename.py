@@ -71,11 +71,11 @@ for f in girl_files:
   if f != 'rename_all_files.py':
     file = f.replace('.png', '')
     if file not in dict:
-      py = lazy_pinyin(file)
+      py = lazy_pinyin(file.replace('2233娘', '2233'))
       name = ''
       for char in py:
         name = name + char
-      dict[file] = 'bili_' + name.replace('2233niang', '2233')
+      dict[file] = 'bili_' + name
       copyfile(girl_path + '/' + f, girl_path + path_sufix + '/' + name + '.png')
 
 # print(dict)
