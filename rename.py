@@ -69,13 +69,13 @@ girl_files = [f for f in listdir(girl_path) if isfile(join(girl_path, f))]
 
 for f in girl_files:
   if f != 'rename_all_files.py':
-    file = f.replace('.png', '').replace('2233娘', '2233')
+    file = f.replace('.png', '')
     if file not in dict:
       py = lazy_pinyin(file)
       name = ''
       for char in py:
         name = name + char
-      dict[file] = 'bili_' + name
+      dict[file] = 'bili_' + name.replace('2233niang', '2233')
       copyfile(girl_path + '/' + f, girl_path + path_sufix + '/' + name + '.png')
 
 # print(dict)
